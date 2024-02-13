@@ -13,7 +13,7 @@ const chat = asyncHandler(async (req, res) => {
       model: process.env.OPEN_AI_MODEL_ID,
       messages,
       temperature: process.env.TEMPERATURE,
-      max_tokens: process.env.MAX_TOKENS,
+      max_tokens: parseInt(process.env.MAX_TOKENS),
       top_p: process.env.TOP_P,
       frequency_penalty: process.env.FREQUENCY_PENALTY,
       presence_penalty: process.env.PRESENSE_PENALTY,
