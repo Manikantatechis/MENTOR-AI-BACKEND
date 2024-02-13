@@ -12,11 +12,11 @@ const chat = asyncHandler(async (req, res) => {
     const response = await openai.chat.completions.create({
       model: process.env.OPEN_AI_MODEL_ID,
       messages,
-      temperature: 1,
-      max_tokens: 256,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0,
+      temperature: process.env.TEMPERATURE,
+      max_tokens: process.env.MAX_TOKENS,
+      top_p: process.env.TOP_P,
+      frequency_penalty: process.env.FREQUENCY_PENALTY,
+      presence_penalty: process.env.PRESENSE_PENALTY,
     });
   
     return res.json(response);
